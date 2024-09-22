@@ -1,0 +1,100 @@
+<h1>
+  Editar / Agregar
+  curso
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <mat-card-content>
+
+        <form class="grid" [formGroup]="cursoForm" (ngSubmit)="onSubmit()">
+
+          <mat-form-field class="col-12">
+            <mat-label>Título</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="titulo"
+              >
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Descripcion</mat-label>
+            <input
+            matInput
+            type="text"
+            required
+            formControlName="descripcion"
+            >
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Imagen (URL)</mat-label>
+            <input
+            matInput
+            type="text"
+            required
+            formControlName="imagen"
+            >
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Instructor</mat-label>
+            <input
+            matInput
+            type="text"
+            required
+            formControlName="instructor"
+            >
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Precio</mat-label>
+            <input
+            matInput
+            type="number"
+            formControlName="precio"
+            >
+          </mat-form-field>
+
+        </form>
+
+        <div class="flex justify-content-between">
+
+          <button
+            *ngIf="cursoId != null"
+            mat-flat-button
+            color="warn"
+            (click)="delete(cursoId)"
+          >
+            <mat-icon>delete</mat-icon>
+            Borrar
+          </button>
+
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="onSubmit()"
+          >
+            <mat-icon>save</mat-icon>
+            Guardar
+          </button>
+
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <img [src]="curso?.imagen || ''" alt="imagen del curso" mat-card-image>
+    </mat-card>
+  </div>
+
+</div>

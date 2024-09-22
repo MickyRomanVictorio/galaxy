@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/cursos",
+    "/cursos/list",
+    "/cursos/new-curso",
+    "/cursos/search"
+  ]
+}

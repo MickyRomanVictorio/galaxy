@@ -1,0 +1,53 @@
+<mat-card>
+
+  <!-- Titulo -->
+  <mat-card-header>
+    <mat-card-title>{{curso.titulo}}</mat-card-title>
+  </mat-card-header>
+
+  <!-- Imagen -->
+  <img mat-card-image src={{curso.imagen}} alt={{curso.titulo}}>
+
+  <mat-card-content class="mb-2">
+    <p>
+      <strong>Descripción del curso: </strong>
+      {{curso.descripcion}}
+    </p>
+    <p>
+      <strong>Instructor: </strong>
+      {{curso.instructor}}
+    </p>
+    <p>
+      <strong>Precio: </strong>
+      {{curso.precio}}
+    </p>
+  </mat-card-content>
+
+  <mat-divider></mat-divider>
+
+  <!-- Footer -->
+  <mat-card-actions>
+
+    <!-- Editar -->
+    <button mat-button
+      mat-raised
+      color="primary"
+      [routerLink]="['/cursos/edit', curso.id]">
+      <mat-icon>edit</mat-icon>
+      Editar
+    </button>
+
+    <span class="spacer"></span>
+
+    <!-- Eliminar -->
+    <button mat-button
+      mat-raised
+      color="primary"
+      [routerLink]="['/cursos', curso.id]">
+      <mat-icon>more_horiz</mat-icon>
+      Más
+    </button>
+
+  </mat-card-actions>
+
+</mat-card>
